@@ -35,9 +35,11 @@ class LoginComponent extends StatelessWidget {
   _showSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Falha ao entrar'),
+          content: Text('Login ou senha estão incorretos',
+            style: TextStyle(fontSize: 14),),
           elevation: 4.4,
-          duration: Duration(seconds: 4),
+          backgroundColor: Colors.blueGrey,
+          duration: Duration(seconds: 3),
         ));
   }
 

@@ -16,7 +16,24 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      decoration: InputDecoration(label: Text(label)),
+      decoration: InputDecoration(
+          label: Text(label, style: const TextStyle(color: Colors.blueGrey),),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(width: 1.8, color: Colors.blueGrey)),
+          contentPadding: const EdgeInsets.all(22),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(width: 1.8, color: Colors.blueGrey),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(width: 1.8, color: Colors.blueGrey),
+          ),
+          prefixIcon: obscureText
+              ? Icon(Icons.password_sharp, color: Colors.blueGrey.shade700,)
+              : Icon(Icons.people, color: Colors.blueGrey.shade700,)
+      ),
       obscureText: obscureText,
       onChanged: onChanged,
     );
